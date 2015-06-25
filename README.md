@@ -1,14 +1,13 @@
 # Js
-利用JQuery将JSON数据进行前端分分页
+##利用JQuery将JSON数据进行前端分分页
 
 
 
-
-function getJSONData(pn) {  
-	// alert(pn);  
+	function getJSONData(pn) {  
+		// alert(pn);  
 	
 	 $.get("../assist/assistFindAll",null,callback);
-	function callback(data) {  
+		function callback(data) {  
 		var totalCount =getJsonObjLength(data.assists); // 总记录数  
 		var pageSize = 10; // 每页显示几条记录  
 		var pageTotal = Math.ceil(totalCount / pageSize); // 总页数  
@@ -22,29 +21,21 @@ function getJSONData(pn) {
 		var dataRoot = data.assists;  
 		if (pageTotal == 1) {     // 当只有一页时  
 			for (var j = 0; j < totalCount; j++) {  
-				$("li").eq(j).append("<div class='ttl'>" +"<a href=\"update.html?id="+dataRoot[j].id+"\">" +dataRoot[j].question+"</a>"
-								+ "</div>").append("<div class='timestamp'>" + dataRoot[j].pdate
-										+"</div>").append("<div style=\"clear:both\">"
-												+ "</div>").append("<span>" + dataRoot[j].reponse  
-														+ "</span>");
+				$("li").eq(j).append("<div class='ttl'>" +"<a href=\"update.html?id="+dataRoot[j].id+"\">" 			+dataRoot[j].question+"</a>"+ "</div>").append("<div class='timestamp'>" 				      +dataRoot[j].pdate+"</div>").append("<div style=\"clear:both\">"+ "</div>").append("<span>" + dataRoot[j].reponse  + 	"</span>");
 			}  
 		} else {  
 			for (var j = startPage, k = 0; j < endPage, k < pageSize; j++, k++) {  
 				if( j == totalCount){  
 					break;       // 当遍历到最后一条记录时，跳出循环  
 				}  
-				$("li").eq(k).append("<div class='ttl'>" +"<a href=\"update.html?id="+dataRoot[j].id+"\">" +dataRoot[j].question+"</a>"  
-								+ "</div>").append("<div class='timestamp'>" + dataRoot[j].pdate
-										+"</div>").append("<div style=\"clear:both\">"
-												+ "</div>").append("<span>" + dataRoot[j].reponse  
-														+ "</span>");
+				$("li").eq(k).append("<div class='ttl'>" +"<a href=\"update.html?id="+dataRoot[j].id+"\">" +dataRoot[j].question+"</a>"  + "</div>").append("<div class='timestamp'>" + dataRoot[j].pdate
+	+"</div>").append("<div style=\"clear:both\">"	+ "</div>").append("<span>" + dataRoot[j].reponse  + "</span>");
+				}  
 			}  
-		}  
-		$(".page-count").text("共"+pageTotal+"页");  
-	}
-}  
-
-function getPage() {  
+			$(".page-count").text("共"+pageTotal+"页");  
+		}
+	}  
+	function getPage() {  
 
 	 $.get("../assist/assistFindAll",null,callback);
 
@@ -93,10 +84,10 @@ function getPage() {
 
 	}  
 
-}
-function gotoPage(pn) {  
-	// alert(pn);  
-	$(".current-page").text("第"+pn+"页");  
-	getJSONData(pn) ;
-}  
+	}
+	function gotoPage(pn) {  
+		// alert(pn);  
+		$(".current-page").text("第"+pn+"页");  
+		getJSONData(pn) ;
+	}  
 
