@@ -26,7 +26,7 @@ function getJSONData(pn) {
 								+ "</div>").append("<div class='timestamp'>" + dataRoot[j].pdate
 										+"</div>").append("<div style=\"clear:both\">"
 												+ "</div>").append("<span>" + dataRoot[j].reponse  
-														+ "</span>"); 
+														+ "</span>");
 			}  
 		} else {  
 			for (var j = startPage, k = 0; j < endPage, k < pageSize; j++, k++) {  
@@ -37,7 +37,7 @@ function getJSONData(pn) {
 								+ "</div>").append("<div class='timestamp'>" + dataRoot[j].pdate
 										+"</div>").append("<div style=\"clear:both\">"
 												+ "</div>").append("<span>" + dataRoot[j].reponse  
-														+ "</span>"); 
+														+ "</span>");
 			}  
 		}  
 		$(".page-count").text("共"+pageTotal+"页");  
