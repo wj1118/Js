@@ -43,6 +43,7 @@ function getJSONData(pn) {
 		$(".page-count").text("共"+pageTotal+"页");  
 	}
 }  
+
 function getPage() {  
 
 	 $.get("../assist/assistFindAll",null,callback);
